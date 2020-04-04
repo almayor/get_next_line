@@ -6,14 +6,15 @@
 /*   By: unite <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/04 03:21:37 by unite             #+#    #+#             */
-/*   Updated: 2020/04/04 04:38:33 by unite            ###   ########.fr       */
+/*   Updated: 2020/04/04 04:56:20 by unite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "get_next_line.h"
 #include <stdlib.h>
 #include <unistd.h>
-#include <types.h>
+#include <sys/types.h>
 
 static int	fail_cleanup(char **cache)
 {
@@ -32,14 +33,14 @@ static int	get_line(char **cache, int fd, char **line)
 
 	if ((nl = ft_strchr(cache[fd], '\n')))
 	{
-		*line = ft_strdup(nl + 1);
-		tmp = ft_strsub(cache[fd], 0, nl - cache[fd]);
+		*line = ft_strsub(cache[fd], 0, nl - cache[fd]);
+		tmp = ft_strdup(nl + 1);
 		free(cache[fd]);
 		cache[fd] = tmp;
 		if (*line == NULL || cache[fd] == NULL)
 			return (fail_cleanup(cache));
 		if (*cache[fd] == '\0')
-			ft_strdel(cache[fd]);
+			ft_strdel(&cache[fd]);
 	}
 	else
 	{
@@ -72,7 +73,7 @@ int			get_next_line(const int fd, char **line)
 	{
 		buff[ret] = '\0';
 		if (cache[fd] == NULL)
-			cache[fd] = fd_strdup(buff);
+			cache[fd] = ft_strdup(buff);
 		else
 		{
 			tmp = ft_strjoin(cache[fd], buff);
