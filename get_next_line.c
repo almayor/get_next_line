@@ -6,7 +6,7 @@
 /*   By: unite <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/04 03:21:37 by unite             #+#    #+#             */
-/*   Updated: 2020/05/14 14:48:33 by unite            ###   ########.fr       */
+/*   Updated: 2020/05/14 18:57:52 by unite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,20 @@ static int	output(char **cache, int fd, ssize_t ret, char **line)
 /*
 ** @brief Reads and returns a line read from a line descriptor.
 ** @details Reads a line from a file descriptor, where a line is defined as
-** a succession of characters that end with `'\n'` or with `EOF`. The function
+** a succession of characters that end with ``'\n'`` or with `EOF`. The function
 ** can read from a file, the standard output, redirection etc, as well as
 ** multiple file descriptors simultaneously.
-** @note The line is returned <u>without</u> `'\n'`.
+** @param[in] fd The file descriptor used to read.
+** @param[out] line The address pointing to a string that is dynamically
+** allocated by the function and used to save the line read from the file
+** descriptor
+** @retval 1
+** a line has been read
+** @retval 0
+** reading has been completed
+** @retval -1
+** an error happened
+** @note The line is returned <u>without</u> ``'\n'``.
 ** @warning The function has an undefined behaviour if, between two calls, the
 ** same file descriptor designs two distinct files althugh the reading from the
 ** first file was not completed, or if a call to `lseek(2)` was made.
@@ -74,13 +84,8 @@ static int	output(char **cache, int fd, ssize_t ret, char **line)
 ** - The maximum number of file descriptors supported is controlled by the macro
 ** `MAX_FD`.
 ** - The size of the reading buffer is defined by the macro `BUFF_SIZE`.
-** @param[in] fd The file descriptor used to read.
-** @param[out] line The address pointing to a string that is dynamically
-** allocated by the function and used to save the line read from the file
-** descriptor
 ** @see BUFF_SIZE
 ** @see MAX_FD
-** @return Status code
 */
 int			get_next_line(const int fd, char **line)
 {
