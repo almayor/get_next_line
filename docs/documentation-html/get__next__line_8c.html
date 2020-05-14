@@ -87,9 +87,7 @@ $(function() {
 <area shape="rect" title=" " alt="" coords="399,79,487,104"/>
 </map>
 </div>
-</div>
-<p><a href="get__next__line_8c_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ab20831df58070fa98472f95285c72311"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="get__next__line_8c.html#ab20831df58070fa98472f95285c72311">get_next_line</a> (const int fd, char **line)</td></tr>
@@ -142,17 +140,12 @@ Functions</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>The line is returned <u>without</u> <code>'\n'</code>. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>The function has an undefined behaviour if, between two calls, the same file descriptor designs two distinct files althugh the reading from the first file was not completed, or if a call to <code>lseek(2)</code> was made. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd><ul>
-<li>The maximum number of file descriptors supported is controlled by the macro <code>MAX_FD</code>.</li>
-<li>The size of the reading buffer is defined by the macro <code>BUFF_SIZE</code>. </li>
+<li>The maximum number of file descriptors supported is controlled by the macro <a class="el" href="get__next__line_8h.html#ae9c7a3fcf619f9aeb244f8e85a68097f">MAX_FD</a>.</li>
+<li>The size of the reading buffer is defined by the macro <a class="el" href="get__next__line_8h.html#a6c7cd32e1bac137f05e4a752b4ad10af">BUFF_SIZE</a>. </li>
 </ul>
 </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="get__next__line_8h.html#a6c7cd32e1bac137f05e4a752b4ad10af">BUFF_SIZE</a> </dd>
-<dd>
-<a class="el" href="get__next__line_8h.html#ae9c7a3fcf619f9aeb244f8e85a68097f">MAX_FD</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="get__next__line_8c_source.html#l00090">90</a> of file <a class="el" href="get__next__line_8c_source.html">get_next_line.c</a>.</p>
-
-<p class="reference">References <a class="el" href="get__next__line_8h_source.html#l00027">BUFF_SIZE</a>, <a class="elRef" href="https://raw.githack.com/almayor/libft/master/docs/documentation-html/libft_8h.html#aada5f5ba69c0c2c97a1322b4e2554709">ft_strdup()</a>, <a class="elRef" href="https://raw.githack.com/almayor/libft/master/docs/documentation-html/libft_8h.html#a124b6172bd4d81c0d8ad842a277db19a">ft_strjoin()</a>, and <a class="el" href="get__next__line_8h_source.html#l00020">MAX_FD</a>.</p>
+<p class="reference">References <a class="el" href="get__next__line_8h.html#a6c7cd32e1bac137f05e4a752b4ad10af">BUFF_SIZE</a>, <a class="elRef" href="https://raw.githack.com/almayor/libft/master/docs/documentation-html/libft_8h.html#aada5f5ba69c0c2c97a1322b4e2554709">ft_strdup()</a>, <a class="elRef" href="https://raw.githack.com/almayor/libft/master/docs/documentation-html/libft_8h.html#a124b6172bd4d81c0d8ad842a277db19a">ft_strjoin()</a>, and <a class="el" href="get__next__line_8h.html#ae9c7a3fcf619f9aeb244f8e85a68097f">MAX_FD</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">

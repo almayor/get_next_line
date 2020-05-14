@@ -6,7 +6,7 @@
 /*   By: unite <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/04 03:21:37 by unite             #+#    #+#             */
-/*   Updated: 2020/05/14 18:57:52 by unite            ###   ########.fr       */
+/*   Updated: 2020/05/14 20:42:35 by unite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,8 @@ static int	output(char **cache, int fd, ssize_t ret, char **line)
 ** first file was not completed, or if a call to `lseek(2)` was made.
 ** @remark
 ** - The maximum number of file descriptors supported is controlled by the macro
-** `MAX_FD`.
-** - The size of the reading buffer is defined by the macro `BUFF_SIZE`.
-** @see BUFF_SIZE
-** @see MAX_FD
+** #MAX_FD.
+** - The size of the reading buffer is defined by the macro #BUFF_SIZE.
 */
 int			get_next_line(const int fd, char **line)
 {

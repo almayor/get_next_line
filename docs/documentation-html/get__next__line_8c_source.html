@@ -73,7 +73,7 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*   By: unite &lt;marvin@42.fr&gt;                       +#+  +:+       +#+        */</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/*                                                +#+#+#+#+#+   +#+           */</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*   Created: 2020/04/04 03:21:37 by unite             #+#    #+#             */</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   Updated: 2020/05/14 18:57:52 by unite            ###   ########.fr       */</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   Updated: 2020/05/14 20:41:31 by unite            ###   ########.fr       */</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/*                                                                            */</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/* ************************************************************************** */</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
@@ -127,35 +127,35 @@ $(function() {
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">return</span> (get_line(cache, fd, line));</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="get__next__line_8h.html#ab20831df58070fa98472f95285c72311">   90</a></span>&#160;<span class="keywordtype">int</span>         <a class="code" href="get__next__line_8c.html#ab20831df58070fa98472f95285c72311">get_next_line</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> fd, <span class="keywordtype">char</span> **line)</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;{</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">char</span> *cache[<a class="code" href="get__next__line_8h.html#ae9c7a3fcf619f9aeb244f8e85a68097f">MAX_FD</a> + 1];</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">char</span>        buff[<a class="code" href="get__next__line_8h.html#a6c7cd32e1bac137f05e4a752b4ad10af">BUFF_SIZE</a> + 1];</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">char</span>        *tmp;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    ssize_t     ret;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">if</span> (fd &gt; <a class="code" href="get__next__line_8h.html#ae9c7a3fcf619f9aeb244f8e85a68097f">MAX_FD</a> || line == NULL)</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <span class="keywordflow">return</span> (-1);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">while</span> ((ret = read(fd, buff, <a class="code" href="get__next__line_8h.html#a6c7cd32e1bac137f05e4a752b4ad10af">BUFF_SIZE</a>)) &gt; 0)</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        buff[ret] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">if</span> (cache[fd] == NULL)</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            cache[fd] = <a class="codeRef" href="https://raw.githack.com/almayor/libft/master/docs/documentation-html/libft_8h.html#aada5f5ba69c0c2c97a1322b4e2554709">ft_strdup</a>(buff);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            tmp = <a class="codeRef" href="https://raw.githack.com/almayor/libft/master/docs/documentation-html/libft_8h.html#a124b6172bd4d81c0d8ad842a277db19a">ft_strjoin</a>(cache[fd], buff);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            free(cache[fd]);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            cache[fd] = tmp;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        }</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">if</span> (cache[fd] == NULL)</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordflow">return</span> (fail_cleanup(cache));</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordflow">if</span> (<a class="codeRef" href="https://raw.githack.com/almayor/libft/master/docs/documentation-html/libft_8h.html#a8d986b0243eb93d15d9361e341877688">ft_strchr</a>(cache[fd], <span class="charliteral">&#39;\n&#39;</span>))</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            break ;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">return</span> (output(cache, fd, ret, line));</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="get__next__line_8h.html#ab20831df58070fa98472f95285c72311">   88</a></span>&#160;<span class="keywordtype">int</span>         <a class="code" href="get__next__line_8c.html#ab20831df58070fa98472f95285c72311">get_next_line</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> fd, <span class="keywordtype">char</span> **line)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">char</span> *cache[<a class="code" href="get__next__line_8h.html#ae9c7a3fcf619f9aeb244f8e85a68097f">MAX_FD</a> + 1];</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">char</span>        buff[<a class="code" href="get__next__line_8h.html#a6c7cd32e1bac137f05e4a752b4ad10af">BUFF_SIZE</a> + 1];</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">char</span>        *tmp;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    ssize_t     ret;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">if</span> (fd &gt; <a class="code" href="get__next__line_8h.html#ae9c7a3fcf619f9aeb244f8e85a68097f">MAX_FD</a> || line == NULL)</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">return</span> (-1);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">while</span> ((ret = read(fd, buff, <a class="code" href="get__next__line_8h.html#a6c7cd32e1bac137f05e4a752b4ad10af">BUFF_SIZE</a>)) &gt; 0)</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        buff[ret] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">if</span> (cache[fd] == NULL)</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            cache[fd] = <a class="codeRef" href="https://raw.githack.com/almayor/libft/master/docs/documentation-html/libft_8h.html#aada5f5ba69c0c2c97a1322b4e2554709">ft_strdup</a>(buff);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            tmp = <a class="codeRef" href="https://raw.githack.com/almayor/libft/master/docs/documentation-html/libft_8h.html#a124b6172bd4d81c0d8ad842a277db19a">ft_strjoin</a>(cache[fd], buff);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            free(cache[fd]);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            cache[fd] = tmp;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordflow">if</span> (cache[fd] == NULL)</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keywordflow">return</span> (fail_cleanup(cache));</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">if</span> (<a class="codeRef" href="https://raw.githack.com/almayor/libft/master/docs/documentation-html/libft_8h.html#a8d986b0243eb93d15d9361e341877688">ft_strchr</a>(cache[fd], <span class="charliteral">&#39;\n&#39;</span>))</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            break ;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">return</span> (output(cache, fd, ret, line));</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aget__next__line_8c_html_ab20831df58070fa98472f95285c72311"><div class="ttname"><a href="get__next__line_8c.html#ab20831df58070fa98472f95285c72311">get_next_line</a></div><div class="ttdeci">int get_next_line(const int fd, char **line)</div><div class="ttdoc">Reads and returns a line read from a line descriptor.</div><div class="ttdef"><b>Definition:</b> <a href="get__next__line_8c_source.html#l00090">get_next_line.c:90</a></div></div>
+<div class="ttc" id="aget__next__line_8c_html_ab20831df58070fa98472f95285c72311"><div class="ttname"><a href="get__next__line_8c.html#ab20831df58070fa98472f95285c72311">get_next_line</a></div><div class="ttdeci">int get_next_line(const int fd, char **line)</div><div class="ttdoc">Reads and returns a line read from a line descriptor.</div><div class="ttdef"><b>Definition:</b> <a href="get__next__line_8c_source.html#l00088">get_next_line.c:88</a></div></div>
 <div class="ttc" id="alibft_8h_html_a8d986b0243eb93d15d9361e341877688"><div class="ttname"><a href="https://raw.githack.com/almayor/libft/master/docs/documentation-html/libft_8h.html#a8d986b0243eb93d15d9361e341877688">ft_strchr</a></div><div class="ttdeci">char * ft_strchr(const char *s, int c)</div></div>
 <div class="ttc" id="alibft_8h_html_abc617b3f7fb8f3b6b0a557a70b90bb61"><div class="ttname"><a href="https://raw.githack.com/almayor/libft/master/docs/documentation-html/libft_8h.html#abc617b3f7fb8f3b6b0a557a70b90bb61">ft_strdel</a></div><div class="ttdeci">void ft_strdel(char **as)</div></div>
 <div class="ttc" id="aget__next__line_8h_html"><div class="ttname"><a href="get__next__line_8h.html">get_next_line.h</a></div></div>
