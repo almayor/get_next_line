@@ -14,6 +14,8 @@
 
 ## Acknowledgements
 
-My code has been motivated by a similar [project](https://github.com/520luigi/Get_Next_Line/blob/master/get_next_line.c), realised by [Luigi](https://github.com/520luigi). My thanks go to him, as well as to [yyang42](https://github.com/yyang42) for making Moulitest freely available online. As always, I am also grateful to to the entire team behind School 42 and its [Moscow branch](https://21-school.ru
+My code has been motivated by a similar [project](https://github.com/520luigi/Get_Next_Line/blob/master/get_next_line.c), realised by [Luigi](https://github.com/520luigi). My thanks go to him, as well as to [yyang42](https://github.com/yyang42) for making Moulitest freely available online.
+
+As always, I am grateful to to the entire team behind School 42 and its [Moscow branch](https://21-school.ru
 ) and my fellow students for productive discussions.
 
