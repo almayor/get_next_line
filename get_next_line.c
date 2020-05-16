@@ -6,7 +6,7 @@
 /*   By: unite <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/04 03:21:37 by unite             #+#    #+#             */
-/*   Updated: 2020/05/14 20:42:35 by unite            ###   ########.fr       */
+/*   Updated: 2020/05/15 20:06:31 by unite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/types.h>
+#include <errno.h>
 
 static int	fail_cleanup(char **cache)
 {
@@ -60,6 +61,16 @@ static int	output(char **cache, int fd, ssize_t ret, char **line)
 		return (get_line(cache, fd, line));
 }
 
+static int	check_arguments(const int fd, char **line)
+{
+	if (fd > MAX_FD || line == NULL)
+	{
+		errno = EINVAL;
+		return (1);
+	}
+	return (0);
+}
+
 /*
 ** @brief Reads and returns a line read from a line descriptor.
 ** @details Reads a line from a file descriptor, where a line is defined as
@@ -70,19 +81,17 @@ static int	output(char **cache, int fd, ssize_t ret, char **line)
 ** @param[out] line The address pointing to a string that is dynamically
 ** allocated by the function and used to save the line read from the file
 ** descriptor
-** @retval 1
-** a line has been read
-** @retval 0
-** reading has been completed
-** @retval -1
-** an error happened
+** @return If successful, `1` is returned. Upon reading end-of-file zero is
+** returned. Otherwise, a `-1` is returned and the global variable errno is
+** set to indicate the error.
 ** @note The line is returned <u>without</u> ``'\n'``.
 ** @warning The function has an undefined behaviour if, between two calls, the
 ** same file descriptor designs two distinct files althugh the reading from the
 ** first file was not completed, or if a call to `lseek(2)` was made.
 ** @remark
 ** - The maximum number of file descriptors supported is controlled by the macro
-** #MAX_FD.
+** #MAX_FD. If the received file descriptor is larger than #MAX_FD, a `-1`
+** is returned, and `errno` is set to `EINVAL`.
 ** - The size of the reading buffer is defined by the macro #BUFF_SIZE.
 */
 int			get_next_line(const int fd, char **line)
@@ -92,7 +101,7 @@ int			get_next_line(const int fd, char **line)
 	char		*tmp;
 	ssize_t		ret;
 
-	if (fd > MAX_FD || line == NULL)
+	if (check_arguments(fd, line))
 		return (-1);
 	while ((ret = read(fd, buff, BUFF_SIZE)) > 0)
 	{
