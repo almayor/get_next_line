@@ -6,12 +6,12 @@
 /*   By: unite <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/04 03:20:09 by unite             #+#    #+#             */
-/*   Updated: 2020/05/14 14:32:16 by unite            ###   ########.fr       */
+/*   Updated: 2020/05/18 03:40:48 by unite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef GET_NEXT_LINE
-# define GET_NEXT_LINE
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
 /*
 ** Controls the largest file description, as well the overall number of file
@@ -28,4 +28,4 @@
 
 int		get_next_line(const int fd, char **line);
 
-# endif
+#endif

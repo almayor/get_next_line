@@ -6,7 +6,7 @@
 /*   By: unite <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/04 03:21:37 by unite             #+#    #+#             */
-/*   Updated: 2020/05/15 20:06:31 by unite            ###   ########.fr       */
+/*   Updated: 2020/05/18 03:40:22 by unite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,7 @@ static int	check_arguments(const int fd, char **line)
 ** is returned, and `errno` is set to `EINVAL`.
 ** - The size of the reading buffer is defined by the macro #BUFF_SIZE.
 */
+
 int			get_next_line(const int fd, char **line)
 {
 	static char	*cache[MAX_FD + 1];
