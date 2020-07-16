@@ -6,7 +6,7 @@
 /*   By: unite <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/04 03:21:37 by unite             #+#    #+#             */
-/*   Updated: 2020/05/18 03:40:22 by unite            ###   ########.fr       */
+/*   Updated: 2020/07/16 03:34:12 by unite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static int	check_arguments(const int fd, char **line)
 }
 
 /*
-** @brief Reads and returns a line read from a line descriptor.
+** @brief Reads next line from a file descriptor.
 ** @details Reads a line from a file descriptor, where a line is defined as
 ** a succession of characters that end with ``'\n'`` or with `EOF`. The function
 ** can read from a file, the standard output, redirection etc, as well as

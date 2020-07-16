@@ -6,9 +6,9 @@
 
 
 * [Official instructions](docs/subjects/get_next_line.en.pdf)
+* [Code documentation](https://almayor.github.io/get_next_line/)
 * The aim of this project is to make you code a function that returns a line ending with a newline, read from a file descriptor.
 * As per instructions, the project is realised using `libft` compiled during a previous [project](http://github.com/almayor/libft).
-* Documentation ([html](https://rawcdn.githack.com/almayor/get_next_line/master/docs/documentation-html/get__next__line_8h.html), [pdf](docs/documentation.pdf)) generated with [Doxygen](http://www.doxygen.nl).
 * The project is consistent with the [Norme](docs/subjects/norme.en.pdf), the code standard accepted at *School 42*.
 * This project has been tested with [Moulitest](https://github.com/yyang42/moulitest). 
 

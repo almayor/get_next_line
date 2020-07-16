@@ -6,11 +6,12 @@
 /*   By: unite <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/04 03:20:09 by unite             #+#    #+#             */
-/*   Updated: 2020/05/18 03:40:48 by unite            ###   ########.fr       */
+/*   Updated: 2020/07/16 03:35:23 by unite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
+
 # define GET_NEXT_LINE_H
 
 /*
@@ -20,9 +21,9 @@
 # define MAX_FD		512
 
 /*
-** Controls the size of the read buffer. Increasing it can lead to a speed-up
-** due to a reduced number of system calls, but will increase the function
-** memory usage.
+** @brief Controls the size of the read buffer.
+** @details Increasing it can lead to a speed-up due to a reduced number of
+** system calls, but will increase the function memory footprint.
 */
 # define BUFF_SIZE	32
 
