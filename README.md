@@ -2,8 +2,10 @@
 
 *This project is part of the official curriculum at [School 42](https://en.wikipedia.org/wiki/42_(school)).*
 
-## Overview
+## Disclaimer
+> In [School 42](https://en.wikipedia.org/wiki/42_(school)), almost every project must be written to comply with. coding standard (also known as the "[Norm](./docs/subjects/norme.en.pdf)"). As a result, the implementation of certain parts may appear strange.
 
+## Overview
 
 * [Official instructions](docs/subjects/get_next_line.en.pdf)
 * [Code documentation](https://almayor.github.io/get_next_line/)
@@ -18,4 +20,3 @@ My code has been motivated by a similar [project](https://github.com/520luigi/Ge
 
 As always, I am grateful to to the entire team behind School 42 and its [Moscow branch](https://21-school.ru
 ) and my fellow students for productive discussions.
-

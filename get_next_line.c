@@ -6,7 +6,7 @@
 /*   By: unite <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/04 03:21:37 by unite             #+#    #+#             */
-/*   Updated: 2020/07/16 03:34:12 by unite            ###   ########.fr       */
+/*   Updated: 2020/07/16 14:08:16 by unite            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ static int	check_arguments(const int fd, char **line)
 ** @remark
 ** - The maximum number of file descriptors supported is controlled by the macro
 ** #MAX_FD. If the received file descriptor is larger than #MAX_FD, a `-1`
-** is returned, and `errno` is set to `EINVAL`.
+** is returned.
 ** - The size of the reading buffer is defined by the macro #BUFF_SIZE.
 */
 
